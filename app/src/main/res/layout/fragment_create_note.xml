@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_light"
+    android:padding="16dp"
+    tools:context=".CreateNoteFragment">
+
+    <TextView
+        android:id="@+id/tvCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="Add Note"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/note_background_outline"
+        android:hint="Title"
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="13dp"
+        android:textColor="@color/primary_dark"
+        android:textColorHighlight="@color/primary"
+        android:textCursorDrawable="@color/primary_dark"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreate"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/etBody"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/note_background_outline"
+        android:hint="Content"
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="20dp"
+        android:gravity="top|start"
+        android:textColorHint="@color/primary_dark"
+        android:textCursorDrawable="@color/primary"
+        android:paddingVertical="10dp"
+        android:textColor="@color/primary_dark"
+        android:textSize="14sp"
+        android:textColorHighlight="@color/primary_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:backgroundTint="@color/primary_dark"
+        android:layout_marginVertical="20dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBody" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

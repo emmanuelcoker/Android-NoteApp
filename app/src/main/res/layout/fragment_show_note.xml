@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_light"
+    android:padding="16dp"
+    tools:context=".ShowNoteFragment">
+
+
+    <ImageButton
+        android:id="@+id/ibBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/note_background_outline"
+        android:contentDescription="back button"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArchiveIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="294dp"
+        android:src="@drawable/ic_bookmarked"
+        app:layout_constraintBottom_toBottomOf="@+id/ibBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibBack"
+        app:layout_constraintTop_toTopOf="@+id/ibBack" />
+
+    <EditText
+        android:id="@+id/etNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:hint="title"
+        android:textColorHighlight="@color/primary"
+        android:textCursorDrawable="@color/primary_dark"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:inputType="textMultiLine"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Text Title"
+        android:textColor="@color/primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibBack" />
+
+
+    <EditText
+        android:id="@+id/etNoteBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginBottom="423dp"
+        android:background="@drawable/note_background_outline"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:text="dagggakldgadgadkgladgadgjkadgasdgjkadg"
+        android:textColor="@color/primary_dark"
+        android:textColorHighlight="@color/primary"
+        android:textCursorDrawable="@color/primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNoteTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/primary_dark"
+        android:paddingVertical="12dp"
+        android:text="Save"
+        android:textColor="@color/primary_light"
+        android:textSize="12sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

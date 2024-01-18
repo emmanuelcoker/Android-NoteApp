@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/noteFragment">
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.wema.noteapp.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_showNoteFragment"
+            app:destination="@id/showNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showNoteFragment"
+        android:name="com.wema.noteapp.ShowNoteFragment"
+        android:label="fragment_show_note"
+        tools:layout="@layout/fragment_show_note" >
+        <argument
+            android:name="noteId"
+            app:argType="long" />
+    </fragment>
+</navigation>
