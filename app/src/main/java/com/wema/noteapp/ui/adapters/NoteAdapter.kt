@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wema.noteapp.NoteFragmentDirections
 import com.wema.noteapp.R
 import com.wema.noteapp.db.Note
-import com.wema.noteapp.ui.viewmodels.NoteViewModel
+import com.wema.noteapp.ui.interfaces.INoteListener
 
 class NoteAdapter(
     var notes: List<Note>,
-    val viewModel: NoteViewModel?
+    private val noteListener: INoteListener
 ): RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     inner class NoteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
@@ -32,11 +32,10 @@ class NoteAdapter(
             this.findViewById<TextView>(R.id.tvNoteBody).text = body
 
             this.findViewById<ImageView>(R.id.ivDelete).setOnClickListener {
-                viewModel?.deleteNote(notes[position])
+                noteListener.onDeleteNoteClicked(notes[position])
             }
             this.setOnClickListener {
-                val direction = NoteFragmentDirections.actionNoteFragmentToShowNoteFragment(noteId.toLong())
-                findNavController().navigate(direction)
+                noteListener.onNoteClicked(noteId.toLong())
             }
         }
     }
@@ -44,4 +43,5 @@ class NoteAdapter(
     override fun getItemCount(): Int {
         return notes.size
     }
+
 }

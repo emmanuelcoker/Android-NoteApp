@@ -44,3 +44,5 @@ class NoteRepository(context: Context) {
         database?.noteDao()?.delete(note)
     }
 }
+
+//class InvalidNumberException(message: String = "something something went wrong"): Exception(message)

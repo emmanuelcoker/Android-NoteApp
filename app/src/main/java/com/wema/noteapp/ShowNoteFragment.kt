@@ -12,11 +12,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.wema.noteapp.databinding.FragmentShowNoteBinding
 import com.wema.noteapp.db.Note
+import com.wema.noteapp.ui.interfaces.INoteObserver
 import com.wema.noteapp.ui.states.NoteDetailUiState
 import com.wema.noteapp.ui.viewmodels.NoteDetailViewModel
 import com.wema.noteapp.ui.viewmodels.NoteDetailViewModelFactory
 
-class ShowNoteFragment : Fragment() {
+class ShowNoteFragment : Fragment(), INoteObserver {
 
     private lateinit var binding: FragmentShowNoteBinding
     private  val arguments: ShowNoteFragmentArgs by navArgs()
@@ -58,7 +59,7 @@ class ShowNoteFragment : Fragment() {
         }
     }
 
-    private fun noteObserver() {
+    override fun noteObserver() {
         viewModel?.noteState?.observe((viewLifecycleOwner)) { note ->
             val noteItem = Note(note.id, note.title, note.body, note.isArchived, note.created_at, note.updated_at)
             updateNoteOnUi(noteItem)
@@ -69,7 +70,6 @@ class ShowNoteFragment : Fragment() {
     }
 
     private fun updateNoteOnUi(note: Note) {
-        Log.d("NoteId", "update ui called")
         binding.etNoteTitle.setText(note.title)
         binding.etNoteBody.setText(note.body)
     }

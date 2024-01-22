@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notedetailprov">NoteDetailViewModelProvider</string>
+    <string name="snackbar_msg">snackBarImplementation Snackbar</string>
+    <string name="note_created_message">Note created successfully!</string>
+    <string name="note_deleted_message">Note Deleted successfully!</string>
 </resources>
